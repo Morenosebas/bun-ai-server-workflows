@@ -8,7 +8,7 @@ Proyecto de servicios AI para integración rápida y ligeras utilities.
 
 ## Descripción
 
-Este repositorio contiene una API/colección de servicios para integrar distintos modelos y proveedores de IA (texto->texto, imagen->imagen, visión->texto, etc.). Está diseñado para ejecutarse con `bun` y ofrece una estructura modular en las carpetas `services/`, `provider/` y `workflows/`.
+Este repositorio contiene una API/colección de servicios para integrar distintos modelos y proveedores de IA (texto->texto, imagen->imagen, visión->texto, etc.). Está diseñado para ejecutarse con `bun` y ofrece una estructura modular en las carpetas `services/`, `provider/` y `workflows/`. Inspirado en el repositorio https://github.com/midudev/bun-ai-api
 
 ## Features
 
