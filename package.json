@@ -1,0 +1,23 @@
+{
+  "name": "ai-services-integration",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "bun run index.ts",
+    "dev": "bun --watch run index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@cerebras/cerebras_cloud_sdk": "^1.59.0",
+    "@google/genai": "^1.38.0",
+    "date-fns": "^4.1.0",
+    "date-fns-tz": "^3.2.0",
+    "groq-sdk": "^0.37.0"
+  }
+}
