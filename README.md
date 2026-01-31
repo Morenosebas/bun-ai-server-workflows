@@ -1,5 +1,7 @@
 # bun-ai-service-api-main
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 Proyecto de servicios AI para integración rápida y ligeras utilities.
 
 **Autor:** Morenosebas — https://github.com/Morenosebas
@@ -69,9 +71,12 @@ Para añadir un nuevo servicio, revisa `docs/adding-services.md` y el patrón en
 2. Crea una rama con tu feature: `git checkout -b feature/nombre`
 3. Abre un PR describiendo los cambios.
 
+
 ## Licencia
 
-Indica la licencia del proyecto si corresponde. Si no hay licencia, añade una para clarificar usos.
+Este proyecto se publica bajo la licencia MIT. Consulta el archivo [LICENSE](LICENSE) para el texto completo.
+
+Copyright (c) 2026 Morenosebas
 
 ---
 
