@@ -65,6 +65,76 @@ Consulta `docs/` para referencia de la API y flujos:
 
 Para añadir un nuevo servicio, revisa `docs/adding-services.md` y el patrón en `services/`.
 
+## Ejemplos de uso
+
+Nota: Si has configurado `API_KEY` en el entorno, incluye el header `Authorization: Bearer <API_KEY>` en las peticiones.
+
+- Health / info (GET):
+
+```bash
+curl http://localhost:3000/
+```
+
+- Texto / chat (POST, SSE stream):
+
+```bash
+curl -N -H "Content-Type: application/json" \
+	-H "Authorization: Bearer $API_KEY" \
+	-d '{"messages":[{"role":"user","content":"Escribe un poema corto en español."}]}' \
+	http://localhost:3000/text
+```
+
+El endpoint `POST /chat` es un alias de `/text`.
+
+- Visión / análisis de imagen (POST, SSE stream):
+
+```bash
+curl -N -H "Content-Type: application/json" \
+	-H "Authorization: Bearer $API_KEY" \
+	-d '{"messages":[{"role":"user","content":[{"type":"image_url","image_url":{"url":"https://example.com/image.jpg"}}]}]}' \
+	http://localhost:3000/vision
+```
+
+- Generación de imagen (POST, JSON response):
+
+```bash
+curl -s -H "Content-Type: application/json" \
+	-H "Authorization: Bearer $API_KEY" \
+	-d '{"prompt":"A serene landscape, sunrise over mountains","options":{"width":1024,"height":768}}' \
+	http://localhost:3000/image
+```
+
+- Workflows:
+
+	- Listar workflows (GET):
+
+	```bash
+	curl -H "Authorization: Bearer $API_KEY" http://localhost:3000/workflow
+	```
+
+	- Iniciar workflow (POST):
+
+	```bash
+	curl -X POST -H "Content-Type: application/json" \
+		-H "Authorization: Bearer $API_KEY" \
+		-d '{"input":{"prompt":"Generate a marketing blurb for a product"}}' \
+		http://localhost:3000/workflow/<workflow-name>
+	```
+
+	- Obtener estado (GET):
+
+	```bash
+	curl -H "Authorization: Bearer $API_KEY" http://localhost:3000/workflow/<workflow-id>/status
+	```
+
+	- Conectarse al stream SSE de un workflow (GET):
+
+	```bash
+	curl -N -H "Authorization: Bearer $API_KEY" http://localhost:3000/workflow/<workflow-id>/stream
+	```
+
+
+
 ## Contribuir
 
 1. Haz fork del repositorio.
@@ -80,4 +150,3 @@ Copyright (c) 2026 Morenosebas
 
 ---
 
-Si quieres que refine el README (añada ejemplos de endpoints, diagramas de arquitectura o instrucciones de despliegue), dime qué se ajusta a tus necesidades y lo amplío.
